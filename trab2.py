@@ -1,3 +1,4 @@
+
 import struct
 
 def lerNome():
@@ -40,7 +41,7 @@ def mostrarRegistro(registro):
     print('Salario: ', tupla[3])
 
 def mostrarTamanhoRegistro():
-    print(struct.calcsize('i20siic')
+    print(struct.calcsize('i20siic'))
 
 
 def main():
@@ -59,5 +60,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-
