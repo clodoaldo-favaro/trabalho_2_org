@@ -44,13 +44,31 @@ def mostrarTamanhoRegistro():
     print(struct.calcsize('i20siic'))
 
 
+def mostrarMenuPrincipal():
+    print('1. NOVO REGISTRO')
+    print('2. GRAVAR REGISTROS NO ARQUIVO')
+    print('3. MOSTRAR REGISTROS NO ARQUIVO')
+    print('4. PESQUISAR REGISTRO POR NUMERO')
+    print('7. SAIR')
+
+
+
+
 def main():
-    lista = []
-    reg = criarRegistroHelper()
-    lista.append(reg)
-    mostrarRegistro(lista[0])
-    mostrarTamanhoRegistro()
-    print(len(reg))
+
+    listaRegistros = []
+    while True:
+        mostrarMenuPrincipal()
+        opcao = input('Informe a opcao desejada: ')
+        if opcao == '7':
+            break
+        elif opcao == '1':
+            listaRegistros.append(criarRegistroHelper())
+
+
+
+
+
 
 
 
