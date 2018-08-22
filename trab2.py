@@ -1,4 +1,4 @@
-
+import os
 import struct
 
 def lerNome():
@@ -39,6 +39,27 @@ def mostrarRegistro(registro):
     print('Nome: ', tupla[1].decode('utf-8'))
     print('Idade: ', tupla[2])
     print('Salario: ', tupla[3])
+    
+
+    
+def mostrarRegistrosArquivo(caminho):
+    tamanhoRegistro = struct.calcsize('ii20sic')
+    tamanhoArquivo = os.stat(caminho).st_size
+    print('Tamanho do arquivo:', tamanhoArquivo, 'bytes')
+    print('Tamanho do registro: ', tamanhoRegistro)
+    print('Total de registros: ', tamanhoArquivo // tamanhoRegistro)
+    
+    with open(caminho, 'rb') as arq:
+        
+        entrada = arq.read(tamanhoRegistro)
+        print('Tamanho da entrada: ', len(entrada))
+        
+        while entrada != b'':
+            mostrarRegistro(entrada)
+            entrada = arq.read(tamanhoRegistro)
+            
+           
+        
 
 def mostrarTamanhoRegistro():
     print(struct.calcsize('i20siic'))
@@ -53,10 +74,39 @@ def mostrarMenuPrincipal():
 
 
 
+    
+
+def binarySearch(arr, l, r, x):
+ 
+    # Check base case
+    if r >= l:
+ 
+        mid = l + (r - l)/2
+ 
+        # If element is present at the middle itself
+        if arr[mid] == x:
+            return mid
+         
+        # If element is smaller than mid, then it 
+        # can only be present in left subarray
+        elif arr[mid] > x:
+            return binarySearch(arr, l, mid-1, x)
+ 
+        # Else the element can only be present 
+        # in right subarray
+        else:
+            return binarySearch(arr, mid+1, r, x)
+ 
+    else:
+        # Element is not present in the array
+        return -1
+
+
 
 def main():
 
     listaRegistros = []
+    caminho = './dados'
     while True:
         mostrarMenuPrincipal()
         opcao = input('Informe a opcao desejada: ')
@@ -64,6 +114,12 @@ def main():
             break
         elif opcao == '1':
             listaRegistros.append(criarRegistroHelper())
+        elif opcao == '2':
+            gravarArquivo(listaRegistros, caminho)
+            listaRegistros = []
+        elif opcao == '3':
+            mostrarRegistrosArquivo(caminho)
+            
 
 
 
