@@ -65,22 +65,22 @@ def mostrarTamanhoRegistro():
     print(struct.calcsize('i20siic'))
 
 
-def buscaBinaria(file, l, r, chave, tamanhoArquivo):
+def buscaBinaria(file, l, r, chave):
+
     tamanhoRegistro = struct.calcsize('i20siic')
-    
-    
+
     if r >= l:
-        meio = ((tamanhoArquivo//tamanhoRegistro)//2)*tamanhoRegistro 
+
+        meio = ((r - l)//2)
         file.seek(meio)
-        print('Meio do arquivo:',meio)
+        print('Posicao: ', file.tell())
         registro = struct.unpack('i20siic',file.read(tamanhoRegistro))
-        print('Registro[0]', registro[0])
-        print('len(registro[0]', len(str(registro[0])))
-        print('len(chave)', len(chave))
-        print('str(registro[0]) == chave', str(registro[0]) == chave)
-        if str(registro[0]) == chave:
-            print('registro[0] == chave')
+        chaveAtual = str(registro[0])
+
+        if chaveAtual == chave:
             return meio
+        elif chaveAtual > chave:
+            return buscaBinaria(file, l, meio, chave)
         
     
     
@@ -94,7 +94,7 @@ def buscaBinariaHelper(caminho, chave):
     fim = os.stat(caminho).st_size
     tamanhoArquivo = fim
     arq = open(caminho, 'rb')
-    meio = buscaBinaria(arq, 0, fim, chave, tamanhoArquivo)
+    meio = buscaBinaria(arq, 0, fim, chave)
     arq.close()
     return meio
     
