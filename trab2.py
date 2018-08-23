@@ -65,11 +65,50 @@ def mostrarTamanhoRegistro():
     print(struct.calcsize('i20siic'))
 
 
+def buscaBinaria(file, l, r, chave, tamanhoArquivo):
+    tamanhoRegistro = struct.calcsize('i20siic')
+    
+    
+    if r >= l:
+        meio = ((tamanhoArquivo//tamanhoRegistro)//2)*tamanhoRegistro 
+        file.seek(meio)
+        print('Meio do arquivo:',meio)
+        registro = struct.unpack('i20siic',file.read(tamanhoRegistro))
+        print('Registro[0]', registro[0])
+        print('len(registro[0]', len(str(registro[0])))
+        print('len(chave)', len(chave))
+        print('str(registro[0]) == chave', str(registro[0]) == chave)
+        if str(registro[0]) == chave:
+            print('registro[0] == chave')
+            return meio
+        
+    
+    
+    
+    
+        
+    
+        
+        
+def buscaBinariaHelper(caminho, chave):
+    fim = os.stat(caminho).st_size
+    tamanhoArquivo = fim
+    arq = open(caminho, 'rb')
+    meio = buscaBinaria(arq, 0, fim, chave, tamanhoArquivo)
+    arq.close()
+    return meio
+    
+    
+    
+    
+    
+
+
 def mostrarMenuPrincipal():
     print('1. NOVO REGISTRO')
     print('2. GRAVAR REGISTROS NO ARQUIVO')
     print('3. MOSTRAR REGISTROS NO ARQUIVO')
-    print('4. PESQUISAR REGISTRO POR NUMERO')
+    print('4. PESQUISA BINARIA')
     print('7. SAIR')
 
 
@@ -119,6 +158,12 @@ def main():
             listaRegistros = []
         elif opcao == '3':
             mostrarRegistrosArquivo(caminho)
+        elif opcao == '4':
+            chave = input('Qual chave deseja buscar: ')
+            meio = buscaBinariaHelper(caminho, chave)
+            print('Encontrado: ', meio)
+            
+            
             
 
 
