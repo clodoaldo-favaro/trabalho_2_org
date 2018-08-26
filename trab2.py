@@ -1,39 +1,41 @@
 import os
 import struct
 
-def lerNome():
+# Ler o nome. Controla para que no máximo seja de 20 caracteres
+def ler_nome() -> str:
 
     while True:
         entrada = "{:<20}".format(input('Digite o nome: '))
         if len(entrada) <= 20:
-            entrada
             return entrada
         else:
             print('Entrada invalida. Tamanho maximo permitido: 20 caracteres')
 
 
-def criarRegistro(numero, nome, idade, salario):
+def criar_registro(numero, nome, idade, salario):
 
-    registro = struct.pack('i20siic', numero, nome.encode('utf-8'), idade, salario, b'\n')
+    registro: bytes = struct.pack('i20siic', numero, nome.encode('utf-8'), idade, salario, b'\n')
     return registro
 
 
-def criarRegistroHelper():
+def criar_registro_helper():
 
     numero = int(input('Informe o numero:  '))
-    nome = lerNome()
+    nome = ler_nome()
     idade = int(input('Informe a idade:  '))
     salario = int(input('Informe o salario: '))
-    registro = criarRegistro(numero, nome, idade, salario)
+    registro = criar_registro(numero, nome, idade, salario)
     return registro
 
-def gravarArquivo(lista, caminhoArquivo):
+
+def gravar_arquivo(lista, caminhoArquivo):
 
     with open(caminhoArquivo, 'ab') as arq:
         for reg in lista:
             arq.write(reg)
 
-def mostrarRegistro(registro):
+
+def mostrar_registro(registro):
     tupla = struct.unpack('i20siic', registro)
     print('Numero: ', tupla[0])
     print('Nome: ', tupla[1].decode('utf-8'))
@@ -41,8 +43,7 @@ def mostrarRegistro(registro):
     print('Salario: ', tupla[3])
     
 
-    
-def mostrarRegistrosArquivo(caminho):
+def mostrar_registros_arquivo(caminho):
     tamanhoRegistro = struct.calcsize('ii20sic')
     tamanhoArquivo = os.stat(caminho).st_size
     print('Tamanho do arquivo:', tamanhoArquivo, 'bytes')
@@ -55,56 +56,56 @@ def mostrarRegistrosArquivo(caminho):
         print('Tamanho da entrada: ', len(entrada))
         
         while entrada != b'':
-            mostrarRegistro(entrada)
+            mostrar_registro(entrada)
             entrada = arq.read(tamanhoRegistro)
-            
-           
-        
 
-def mostrarTamanhoRegistro():
+
+def mostrar_tamanho_registro():
+
     print(struct.calcsize('i20siic'))
 
 
-def buscaBinaria(file, l, r, chave):
+def busca_binaria(file, l, r, chave: int):
 
-    tamanhoRegistro = struct.calcsize('i20siic')
+    tamanho_registro = struct.calcsize('i20siic')
 
     if r >= l:
 
-        meio = ((r - l)//2)
-        file.seek(meio)
+        mid = ((l + (r - l)//2)//tamanho_registro)*tamanho_registro
+        file.seek(mid)
         print('Posicao: ', file.tell())
-        registro = struct.unpack('i20siic',file.read(tamanhoRegistro))
-        chaveAtual = str(registro[0])
+        file_read = file.read(tamanho_registro)
+        if len(file_read) < tamanho_registro:
+            return -1
+        print('Bytes lidos:', len(file_read))
+        registro = struct.unpack('i20siic', file_read)
 
-        if chaveAtual == chave:
-            return meio
-        elif chaveAtual > chave:
-            return buscaBinaria(file, l, meio, chave)
+
+        if registro[0] == chave:
+            return mid
+        elif registro[0] > chave:
+            return busca_binaria(file, l, mid - tamanho_registro, chave)
+        else:
+            return busca_binaria(file, mid + tamanho_registro, r, chave)
+
+    else:
+        return -1
         
     
     
     
-    
-        
-    
-        
-        
-def buscaBinariaHelper(caminho, chave):
-    fim = os.stat(caminho).st_size
-    tamanhoArquivo = fim
+
+def busca_binaria_helper(caminho:str, chave:int):
+
+    r = os.stat(caminho).st_size
     arq = open(caminho, 'rb')
-    meio = buscaBinaria(arq, 0, fim, chave)
+    posicao = busca_binaria(arq, 0, r, chave)
     arq.close()
-    return meio
-    
-    
-    
-    
+    return posicao
     
 
+def mostrar_menu_principal():
 
-def mostrarMenuPrincipal():
     print('1. NOVO REGISTRO')
     print('2. GRAVAR REGISTROS NO ARQUIVO')
     print('3. MOSTRAR REGISTROS NO ARQUIVO')
@@ -112,70 +113,31 @@ def mostrarMenuPrincipal():
     print('7. SAIR')
 
 
-
-    
-
-def binarySearch(arr, l, r, x):
- 
-    # Check base case
-    if r >= l:
- 
-        mid = l + (r - l)/2
- 
-        # If element is present at the middle itself
-        if arr[mid] == x:
-            return mid
-         
-        # If element is smaller than mid, then it 
-        # can only be present in left subarray
-        elif arr[mid] > x:
-            return binarySearch(arr, l, mid-1, x)
- 
-        # Else the element can only be present 
-        # in right subarray
-        else:
-            return binarySearch(arr, mid+1, r, x)
- 
-    else:
-        # Element is not present in the array
-        return -1
-
-
-
 def main():
 
-    listaRegistros = []
+    lista_registros = []
     caminho = './dados'
     while True:
-        mostrarMenuPrincipal()
+        mostrar_menu_principal()
         opcao = input('Informe a opcao desejada: ')
         if opcao == '7':
             break
         elif opcao == '1':
-            listaRegistros.append(criarRegistroHelper())
+            lista_registros.append(criar_registro_helper())
         elif opcao == '2':
-            gravarArquivo(listaRegistros, caminho)
-            listaRegistros = []
+            gravar_arquivo(lista_registros, caminho)
+            lista_registros = []
         elif opcao == '3':
-            mostrarRegistrosArquivo(caminho)
+            mostrar_registros_arquivo(caminho)
         elif opcao == '4':
-            chave = input('Qual chave deseja buscar: ')
-            meio = buscaBinariaHelper(caminho, chave)
-            print('Encontrado: ', meio)
+            chave :int = int(input('Qual chave deseja buscar: '))
+            meio :int = busca_binaria_helper(caminho, chave)
+            if meio != -1:
+                print('Registro encontrado na posicao: ', meio)
+            else:
+                print('Registro não localizado')
             
             
-            
-
-
-
-
-
-
-
-
-
-
-
 
 if __name__ == "__main__":
     main()
