@@ -1,6 +1,4 @@
-def greetings(name:str) -> str:
-    return 'Hello ' + name
+with open('./bla', 'r+b') as file:
+    file.seek(5)
+    file.write(b'ABC')
 
-
-
-print(greetings('Clodoaldo'))

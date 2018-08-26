@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2a8ada3a-6e87-49a4-bcf0-10008280d373" name="Default Changelist" comment="&quot;Resolvendo pesquisa binaria&quot;">
-      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/clodo.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/teste.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dados" beforeDir="false" afterPath="$PROJECT_DIR$/dados" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/teste.py" beforeDir="false" afterPath="$PROJECT_DIR$/teste.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/trab2.py" beforeDir="false" afterPath="$PROJECT_DIR$/trab2.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -17,33 +16,35 @@
     <session id="1271792795">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="4" />
+          <entry key="project.closed" value="5" />
           <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.3" value="3" />
-          <entry key="project.open.time.4" value="2" />
-          <entry key="project.opened" value="6" />
+          <entry key="project.open.time.4" value="3" />
+          <entry key="project.opened" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="py" value="2" />
+          <entry key="bla" value="7" />
+          <entry key="py" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Python" value="2" />
+          <entry key="PLAIN_TEXT" value="7" />
+          <entry key="Python" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="1279" />
+          <entry key="py" value="1426" />
           <entry key="txt" value="143" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PLAIN_TEXT" value="143" />
-          <entry key="Python" value="1279" />
+          <entry key="Python" value="1426" />
         </counts>
       </usages-collector>
     </session>
@@ -53,11 +54,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/trab2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
-              <caret line="137" column="46" selection-start-line="137" selection-start-column="46" selection-end-line="137" selection-end-column="46" />
+            <state relative-caret-position="529">
+              <caret line="135" column="65" selection-start-line="135" selection-start-column="65" selection-end-line="135" selection-end-column="65" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
-                <marker date="1535263565042" expanded="true" signature="3808:3809" ph="..." />
+                <marker date="1535300674730" expanded="true" signature="3817:3818" ph="..." />
               </folding>
             </state>
           </provider>
@@ -109,7 +110,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="settings.github" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -162,7 +163,7 @@
     <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17913593" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17913593" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -173,7 +174,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32952183" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.32952183" />
+      <window_info anchor="bottom" id="Terminal" order="8" visible="true" weight="0.32952183" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Python Console" order="10" weight="0.32952183" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -191,20 +192,23 @@
     <option name="LAST_COMMIT_MESSAGE" value="&quot;Resolvendo pesquisa binaria&quot;" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/bla">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/teste.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="29" selection-start-line="5" selection-start-column="29" selection-end-line="5" selection-end-column="29" />
+        <state relative-caret-position="34">
+          <caret line="2" column="20" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/trab2.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="137" column="46" selection-start-line="137" selection-start-column="46" selection-end-line="137" selection-end-column="46" />
+        <state relative-caret-position="529">
+          <caret line="135" column="65" selection-start-line="135" selection-start-column="65" selection-end-line="135" selection-end-column="65" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
-            <marker date="1535263565042" expanded="true" signature="3808:3809" ph="..." />
+            <marker date="1535300674730" expanded="true" signature="3817:3818" ph="..." />
           </folding>
         </state>
       </provider>

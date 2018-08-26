@@ -131,9 +131,9 @@ def main():
             mostrar_registros_arquivo(caminho)
         elif opcao == '4':
             chave :int = int(input('Qual chave deseja buscar: '))
-            meio :int = busca_binaria_helper(caminho, chave)
-            if meio != -1:
-                print('Registro encontrado na posicao: ', meio)
+            posicao :int = busca_binaria_helper(caminho, chave)
+            if posicao != -1:
+                print('Registro encontrado na posicao: ', posicao)
             else:
                 print('Registro não localizado')
             
