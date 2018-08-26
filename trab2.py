@@ -94,22 +94,23 @@ def busca_binaria(file, l, r, chave: int):
 
 def busca_binaria_indice(file, l, r, chave: int):
 
-    tamanho_registro = struct.calcsize('ii')
+    tamanho_registro = struct.calcsize('iic')
 
     if r >= l:
 
         mid = ((l + (r - l)//2)//tamanho_registro)*tamanho_registro
+        print('Mid', mid)
         file.seek(mid)
         print('Posicao: ', file.tell())
         file_read = file.read(tamanho_registro)
         if len(file_read) < tamanho_registro:
             return -1
         print('Bytes lidos:', len(file_read))
-        registro = struct.unpack('i20siic', file_read)
+        registro = struct.unpack('iic', file_read)
 
 
         if registro[0] == chave:
-            return mid
+            return registro[1]
         elif registro[0] > chave:
             return busca_binaria(file, l, mid - tamanho_registro, chave)
         else:
@@ -168,7 +169,8 @@ def mostrar_menu_principal():
     print('4. PESQUISA BINARIA')
     print('5. CRIAR INDICE')
     print('6. MOSTRAR ARQUIVO INDICE')
-    print('7. SAIR')
+    print('7. PESQUISA BINARIA NO ARQUIVO INDICE')
+    print('10. SAIR')
 
 
 def main():
@@ -179,7 +181,7 @@ def main():
     while True:
         mostrar_menu_principal()
         opcao = input('Informe a opcao desejada: ')
-        if opcao == '7':
+        if opcao == '10':
             break
         elif opcao == '1':
             lista_registros.append(criar_registro_helper())
@@ -199,6 +201,18 @@ def main():
             criar_indices('./dados')
         elif opcao == '6':
             ler_indices('./index')
+        elif opcao == '7':
+            chave :int = int(input('Informe a chave que deseja procurar:  '))
+            caminho_indice = './index'
+            r = os.stat(caminho_indice).st_size
+            print('Tamanho do arquivo indice', r)
+            with open('./index', 'rb') as index_file:
+                endereco :int = busca_binaria_indice(index_file, 0, r, chave)
+                if endereco != -1:
+                    print('A chave', chave, 'esta no endereco', endereco)
+                else:
+                    print('Chave', chave, 'nao localizada')
+
             
             
 
