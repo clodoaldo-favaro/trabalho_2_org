@@ -116,7 +116,7 @@ def mostrar_menu_principal():
 def main():
 
     lista_registros = []
-    #hello
+
     caminho = './dados'
     while True:
         mostrar_menu_principal()
