@@ -112,9 +112,9 @@ def busca_binaria_indice(file, l, r, chave: int):
         if registro[0] == chave:
             return registro[1]
         elif registro[0] > chave:
-            return busca_binaria(file, l, mid - tamanho_registro, chave)
+            return busca_binaria_indice(file, l, mid - tamanho_registro, chave)
         else:
-            return busca_binaria(file, mid + tamanho_registro, r, chave)
+            return busca_binaria_indice(file, mid + tamanho_registro, r, chave)
 
     else:
         return -1
@@ -169,7 +169,7 @@ def mostrar_menu_principal():
     print('4. PESQUISA BINARIA')
     print('5. CRIAR INDICE')
     print('6. MOSTRAR ARQUIVO INDICE')
-    print('7. PESQUISA BINARIA NO ARQUIVO INDICE')
+    print('7. PESQUISA BINARIA COM INDICE')
     print('10. SAIR')
 
 
@@ -210,8 +210,17 @@ def main():
                 endereco :int = busca_binaria_indice(index_file, 0, r, chave)
                 if endereco != -1:
                     print('A chave', chave, 'esta no endereco', endereco)
+                    with open('./dados', 'rb') as file_dados:
+                        file_dados.seek(endereco)
+                        tamanho_registro = struct.calcsize('i20siic')
+                        registro = file_dados.read(tamanho_registro)
+                        mostrar_registro(registro)
                 else:
                     print('Chave', chave, 'nao localizada')
+
+
+
+
 
             
             

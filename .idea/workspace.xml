@@ -38,41 +38,32 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="3098" />
+          <entry key="py" value="3438" />
           <entry key="txt" value="172" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PLAIN_TEXT" value="172" />
-          <entry key="Python" value="3098" />
+          <entry key="Python" value="3438" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/trab2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="329">
-              <caret line="163" selection-start-line="163" selection-end-line="163" />
+            <state relative-caret-position="495">
+              <caret line="216" column="50" lean-forward="true" selection-start-line="216" selection-start-column="50" selection-end-line="216" selection-end-column="50" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
-                <marker date="1535309415300" expanded="true" signature="1745:1746" ph="..." />
-                <marker date="1535309415300" expanded="true" signature="3381:4276" ph="..." />
-                <marker date="1535309415300" expanded="true" signature="4325:4331" ph="..." />
-                <marker date="1535309415300" expanded="true" signature="6324:6325" ph="..." />
+                <marker date="1535334058372" expanded="true" signature="1745:1746" ph="..." />
+                <marker date="1535334058372" expanded="true" signature="3395:4290" ph="..." />
+                <marker date="1535334058372" expanded="true" signature="4339:4345" ph="..." />
+                <marker date="1535334058372" expanded="true" signature="6637:6638" ph="..." />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://D:/Anaconda3/Lib/urllib/parse.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
-              <caret line="746" selection-start-line="746" selection-end-line="746" />
             </state>
           </provider>
         </entry>
@@ -203,6 +194,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17913593" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -232,16 +224,24 @@
     <MESSAGE value="&quot;Resolvendo pesquisa binaria&quot;" />
     <option name="LAST_COMMIT_MESSAGE" value="&quot;Resolvendo pesquisa binaria&quot;" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/trab2.py</url>
-          <line>94</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+  <component name="debuggerHistoryManager">
+    <expressions id="evaluateExpression">
+      <expression>
+        <expression-string>registro[1]</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>registro[0]</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>len(file)</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/bla">
@@ -264,24 +264,24 @@
     <entry file="file://$PROJECT_DIR$/index">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/trab2.py">
+    <entry file="file://D:/Anaconda3/Lib/urllib/parse.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="329">
-          <caret line="163" selection-start-line="163" selection-end-line="163" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-            <marker date="1535309415300" expanded="true" signature="1745:1746" ph="..." />
-            <marker date="1535309415300" expanded="true" signature="3381:4276" ph="..." />
-            <marker date="1535309415300" expanded="true" signature="4325:4331" ph="..." />
-            <marker date="1535309415300" expanded="true" signature="6324:6325" ph="..." />
-          </folding>
+        <state relative-caret-position="150">
+          <caret line="744" column="18" lean-forward="true" selection-start-line="744" selection-start-column="18" selection-end-line="744" selection-end-column="18" />
         </state>
       </provider>
     </entry>
-    <entry file="file://D:/Anaconda3/Lib/urllib/parse.py">
+    <entry file="file://$PROJECT_DIR$/trab2.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="746" selection-start-line="746" selection-end-line="746" />
+        <state relative-caret-position="495">
+          <caret line="216" column="50" lean-forward="true" selection-start-line="216" selection-start-column="50" selection-end-line="216" selection-end-column="50" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+            <marker date="1535334058372" expanded="true" signature="1745:1746" ph="..." />
+            <marker date="1535334058372" expanded="true" signature="3395:4290" ph="..." />
+            <marker date="1535334058372" expanded="true" signature="4339:4345" ph="..." />
+            <marker date="1535334058372" expanded="true" signature="6637:6638" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
